@@ -6,8 +6,8 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Palette Playground",
-  description: "Open-source color palette generator for your design needs",
+  title: "Donovan Odom",
+  description: "Donovan Odom's software engineering portfolio",
 };
 
 export default function RootLayout({
