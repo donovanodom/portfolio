@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <GoogleOAuthProvider clientId="894593821748-o67s404105t2npku4mksoi9as6bd1ovb.apps.googleusercontent.com">
-      <html lang="en" className="">
+      <html lang="en">
         <body className={`${inter.className} bg-gray-50 dark:bg-gray-700`}>{children}</body>
       </html>
     </GoogleOAuthProvider>
