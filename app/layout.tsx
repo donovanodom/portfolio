@@ -21,7 +21,9 @@ export default function RootLayout({
       <html lang="en">
         <body className={`${inter.className} bg-gray-50 dark:bg-gray-700`}>
           <NavBar/>
-          {children}
+          <div className="md:px-12 md:py-4 px-4 py-4">
+            {children}
+          </div>
         </body>
       </html>
     </GoogleOAuthProvider>

@@ -7,7 +7,7 @@ const NavBar
     <nav className="bg-white border-gray-200">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-        <div className="text-xl font-medium leading-tight tracking-tight rounded-lg focus:outline-none focus:shadow-outline">
+        <div className="text-xl font-bold leading-tight tracking-tight rounded-lg focus:outline-none focus:shadow-outline">
              Donovan Codes
           </div>
         </Link>
