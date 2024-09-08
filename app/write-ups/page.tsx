@@ -1,15 +1,13 @@
-import WriteUp from "./WriteUp"
 
-export default async function WriteUps(){
+import React from 'react'
+import WriteUps from './WriteUps.server'
 
-  const data = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@donovanodom')
-  const writeUps = await data.json()
-  console.log(writeUps.items[0])
+export const WriteUpsc = () => {
   return (
     <div>
-      {writeUps.items.map((writeUp: any) => {
-        {writeUp.title}
-      })}
+      <WriteUps/>
     </div>
   )
 }
+
+export default WriteUpsc

@@ -1,6 +1,6 @@
 const AboutMe = ()=> {
   return (
-    <div className="grid gap-4 lg:grid-cols-2 sm:grid-cols-1">
+    <div className="grid gap-8 lg:grid-cols-2 sm:grid-cols-1">
       <div>
         <h1 className='mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl'>FullStack, Frontend-focused, TypeScript, React, NextJS and Ruby on Rails Software Engineer.</h1>
         <p className='mb-6 text-md font-normal text-gray-500'>
