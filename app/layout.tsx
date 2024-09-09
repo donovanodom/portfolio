@@ -19,9 +19,9 @@ export default function RootLayout({
   return (
     <GoogleOAuthProvider clientId="894593821748-o67s404105t2npku4mksoi9as6bd1ovb.apps.googleusercontent.com">
       <html lang="en">
-        <body className={`${inter.className} bg-gray-50 dark:bg-gray-700`}>
+        <body className={`${inter.className} bg-gray-50`}>
           <NavBar/>
-          <div className="md:px-12 md:py-4 px-4 py-4">
+          <div className="md:px-12 md:py-4 px-4 py-4 md:mt-14 mt-20">
             {children}
           </div>
         </body>
