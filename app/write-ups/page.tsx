@@ -1,8 +1,8 @@
 
 import React from 'react'
-import WriteUps from './WriteUps.server'
+import WriteUps from './WriteUps'
 
-export const WriteUpsc = () => {
+export const WriteUpsPage = () => {
   return (
     <div>
       <WriteUps/>
@@ -10,4 +10,4 @@ export const WriteUpsc = () => {
   )
 }
 
-export default WriteUpsc
+export default WriteUpsPage
