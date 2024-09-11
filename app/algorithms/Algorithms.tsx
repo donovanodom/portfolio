@@ -1,3 +1,6 @@
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
 export default async function Algorithms(){
 
   const data = await fetch(process.env.NEXT_PUBLIC_API_URL + '/api/algorithms')
@@ -14,7 +17,9 @@ export default async function Algorithms(){
         <div className="[&_pre]:whitespace-pre-wrap">
           <h1 className="mb-4 text-2xl font-extrabold leading-none tracking-tight md:text-3xl lg:text-4xl">{algorithm.title}</h1>
           <div dangerouslySetInnerHTML={{__html: algorithm.content}}/>
-          <code>{convertUnicode(algorithm.code)}</code>
+          <SyntaxHighlighter language="javascript" style={nightOwl}>
+            {convertUnicode(algorithm.code)}
+          </SyntaxHighlighter>
         </div>
       ))}
     </div>
