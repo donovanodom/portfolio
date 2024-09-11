@@ -57,7 +57,7 @@ const NavBar
                 <Link
                   href="/"
                   className="block py-2 px-3 font-light text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
-                  onClick={() => setToggleOpen(!toggleOpen)}
+                  onClick={() => size < 768 ? setToggleOpen(!toggleOpen) : null}
                 >
                   About Me
                 </Link>
@@ -67,16 +67,16 @@ const NavBar
                 <Link
                   href="#"
                   className="block py-2 px-3 font-light text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
-                  onClick={() => setToggleOpen(!toggleOpen)}
+                  onClick={() => size < 768 ? setToggleOpen(!toggleOpen) : null}
                 >
                   Mini-projects
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/algorithms"
                   className="block py-2 px-3 font-light text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
-                  onClick={() => setToggleOpen(!toggleOpen)}
+                  onClick={() => size < 768 ? setToggleOpen(!toggleOpen) : null}
                 >
                   Algorithms
                 </Link>
@@ -85,7 +85,7 @@ const NavBar
                 <Link
                   href="/write-ups"
                   className="block py-2 px-3 font-light text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
-                  onClick={() => setToggleOpen(!toggleOpen)}
+                  onClick={() => size < 768 ? setToggleOpen(!toggleOpen) : null}
                 >
                   Write-ups
                 </Link>

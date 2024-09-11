@@ -6,7 +6,7 @@ const options = {}
 if(!URI) throw new Error('Please add your Mongo URI to env.local')
 
 let client =  new MongoClient(URI, options)
-let clientPromise
+let clientPromise: Promise<MongoClient>
 
 if (process.env.NODE_ENV !== "production") {
   let globalWithMongo = global as typeof globalThis & {
