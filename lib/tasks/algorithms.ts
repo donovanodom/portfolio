@@ -26,8 +26,6 @@ export async function getAlgorithms(id = null) {
     try {
       const result = await algorithms
         .findOne({_id: algorithmId})
- 
-      console.log(id,result)
       return { algorithm: result }
     } catch (error) {
       return { error: 'Failed to fetch algorithm' }
