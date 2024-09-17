@@ -2,7 +2,7 @@
 import React from 'react'
 import WriteUps from './WriteUps'
 
-export const WriteUpsPage = () => {
+const WriteUpsPage = () => {
   return (
     <div>
       <WriteUps/>
