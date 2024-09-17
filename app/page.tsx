@@ -4,7 +4,7 @@ import React from 'react'
 export default async function AboutMe(){
 
   const data = await fetch(process.env.NEXT_PUBLIC_API_URL + '/api/mini-apps/' + '66e8a75b716135c9037538ed')
-  const miniApp = await data.json()
+  const miniApp: MiniApp = await data.json()
 
   return (
     <div className="grid gap-8 lg:grid-cols-2 sm:grid-cols-1">
@@ -16,20 +16,24 @@ export default async function AboutMe(){
         </p>
       </div>
       <div className="pointer">
-        <Link href={'/mini-apps/' + miniApp._id}>
-        <h1 className='mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl'>Featured</h1>
-        <div key={miniApp._id} className="[&_pre]:whitespace-pre-wrap overflow-hidden max-h-full p-2 lg:p-0">
-            <h1 className="hover:text-blue-500 mb-4 text-xl font-extrabold leading-none tracking-tight md:text-2xl">{miniApp.title}</h1>
-            <div className='text-gray-500'>
-            <img src={miniApp.image}/>
-            <br/>
-          </div>
-        </div>
-        </Link>
-        <div>Link to repository:  &nbsp; <a className="cursor-default hover:text-blue-600 text-blue-500 hover:underline" href={miniApp['github-link']}>{miniApp['github-link']}</a></div>
-        <div className="inline">Visit site: &nbsp;
-          <a href={miniApp.site} className=" cursor-default hover:underline inline hover:text-blue-600 text-blue-500">{miniApp.site}</a>
-        </div>
+        {miniApp?._id && ( 
+          <>
+            <Link href={'/mini-apps/' + miniApp._id}>
+            <h1 className='mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl'>Featured</h1>
+            <div key={miniApp._id} className="[&_pre]:whitespace-pre-wrap overflow-hidden max-h-full p-2 lg:p-0">
+                <h1 className="hover:text-blue-500 mb-4 text-xl font-extrabold leading-none tracking-tight md:text-2xl">{miniApp.title}</h1>
+                <div className='text-gray-500'>
+                <img src={miniApp.image}/>
+                <br/>
+              </div>
+            </div>
+            </Link>
+            <div>Link to repository:  &nbsp; <a className="cursor-default hover:text-blue-600 text-blue-500 hover:underline" href={miniApp['github-link']}>{miniApp['github-link']}</a></div>
+            <div className="inline">Visit site: &nbsp;
+              <a href={miniApp.site} className=" cursor-default hover:underline inline hover:text-blue-600 text-blue-500">{miniApp.site}</a>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
