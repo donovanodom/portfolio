@@ -4,7 +4,7 @@ export default async function AboutMe(){
 
   const data = await fetch(process.env.NEXT_PUBLIC_API_URL + '/api/mini-apps/' + '66e8a75b716135c9037538ed')
   const miniApp = await data.json()
-console.log(miniApp)
+
   return (
     <div className="grid gap-8 lg:grid-cols-2 sm:grid-cols-1">
       <div>

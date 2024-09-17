@@ -8,10 +8,10 @@ export default async function AlgorithmDetails( { params }: {
 } ){
 
   const data = await fetch(process.env.NEXT_PUBLIC_API_URL + '/api/algorithms/' + params.algorithmId)
-  const algorithm = await data.json()
+  const algorithm: Algo = await data.json()
 
-  function convertUnicode(input: any) {
-    return input.replace(/\\+u([0-9a-fA-F]{4})/g, (a: any,b: any) =>
+  function convertUnicode(input: string): string {
+    return input.replace(/\\+u([0-9a-fA-F]{4})/g, (a: string, b: string) =>
       String.fromCharCode(parseInt(b, 16)));
   }
 

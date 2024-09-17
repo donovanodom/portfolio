@@ -5,7 +5,7 @@ export default async function MiniAppDetails( { params }: {
 } ){
 
   const data = await fetch(process.env.NEXT_PUBLIC_API_URL + '/api/mini-apps/' + params["mini-appId"])
-  const miniApp = await data.json()
+  const miniApp: MiniApp = await data.json()
 
   return (
     <div className="[&_pre]:whitespace-pre-wrap">
