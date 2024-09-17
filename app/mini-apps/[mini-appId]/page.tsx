@@ -9,7 +9,13 @@ export default async function MiniAppDetails( { params }: {
 
   return (
     <div className="[&_pre]:whitespace-pre-wrap">
-      <h1><a href={miniApp['github-link']} className="mb-4 text-2xl font-extrabold leading-none tracking-tight md:text-3xl lg:text-4xl hover:text-blue-500">{miniApp.title}</a></h1>
+      <h1>
+        <a href={miniApp['github-link']} className="mb-4 text-2xl font-extrabold leading-none tracking-tight md:text-3xl lg:text-4xl hover:text-blue-500">{miniApp.title}</a>
+      </h1>
+      <br/>
+      <div className="inline">Visit site: &nbsp;
+        <a href={miniApp.site} className="cursor-default hover:underline inline hover:text-blue-600 text-blue-500">{miniApp.site}</a>
+      </div>
       <br/>
       <div>
         <p>{miniApp.description}</p>
