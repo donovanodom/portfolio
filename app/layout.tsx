@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { GoogleOAuthProvider } from "@react-oauth/google";
 import NavBar from "./components/NavBar";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <GoogleOAuthProvider clientId="894593821748-o67s404105t2npku4mksoi9as6bd1ovb.apps.googleusercontent.com">
       <html lang="en">
+        <Head>
+         <link rel="shortcut icon" href="/favicon.ico"/>
+        </Head>
         <body className={`${inter.className} bg-gray-50`}>
           <NavBar/>
           <div className="md:px-12 md:py-4 px-4 py-4 md:mt-14 mt-20">
@@ -26,6 +28,5 @@ export default function RootLayout({
           </div>
         </body>
       </html>
-    </GoogleOAuthProvider>
   );
 }
