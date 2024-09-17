@@ -1,5 +1,6 @@
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import React from 'react'
 
 export default async function AlgorithmDetails( { params }: {
   params: {

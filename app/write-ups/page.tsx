@@ -1,4 +1,3 @@
-
 import React from 'react'
 import WriteUps from './WriteUps'
 
