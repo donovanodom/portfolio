@@ -2,7 +2,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import React from 'react'
 
-export default async function AlgorithmDetails( { params }: {
+async function AlgorithmDetails( { params }: {
   params: {
     algorithmId: string
   }
@@ -26,5 +26,15 @@ export default async function AlgorithmDetails( { params }: {
         {convertUnicode(algorithm.code)}
       </SyntaxHighlighter>
     </div>
+  )
+}
+
+export default function Page( { params }: {
+  params: {
+    algorithmId: string
+  }
+} ){
+  return (
+    <AlgorithmDetails params={params}/>
   )
 }

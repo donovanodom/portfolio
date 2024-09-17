@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default async function MiniAppDetails( { params }: {
+async function MiniAppDetails( { params }: {
   params: {
     "mini-appId": string
   }
@@ -27,5 +27,15 @@ export default async function MiniAppDetails( { params }: {
         <div>Link to repository: <a className="text-blue-500" href={miniApp['github-link']}>{miniApp['github-link']}</a></div>
       </div>
     </div>
+  )
+}
+
+export default function Page( { params }: {
+  params: {
+    "mini-appId": string
+  }
+} ){
+  return (
+    <MiniAppDetails params={params}/>
   )
 }

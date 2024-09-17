@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from 'react'
 
-export default async function AboutMe(){
+async function AboutMe(){
 
   const data = await fetch(process.env.NEXT_PUBLIC_API_URL + '/api/mini-apps/' + '66e8a75b716135c9037538ed')
   const miniApp: MiniApp = await data.json()
@@ -37,4 +37,10 @@ export default async function AboutMe(){
       </div>
     </div>
   );
+}
+
+export default function Page(){
+  return (
+    <AboutMe/>
+  )
 }
