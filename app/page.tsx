@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from 'react'
+import React, { Suspense } from 'react'
 
 async function AboutMe(){
 
@@ -41,6 +41,8 @@ async function AboutMe(){
 
 export default function Page(){
   return (
-    <AboutMe/>
+    <Suspense fallback={null}>
+      <AboutMe/>
+    </Suspense>
   )
 }
