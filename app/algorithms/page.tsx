@@ -4,6 +4,7 @@ import React from 'react'
 async function Algorithms(){
 
   const data = await fetch(process.env.NEXT_PUBLIC_API_URL + '/api/algorithms')
+  console.log(process.env.NEXT_PUBLIC_API_URL, data)
   const algorithms: Algo[] = await data.json()
 
   return (
