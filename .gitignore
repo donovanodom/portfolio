@@ -29,6 +29,5 @@
 /node_modules
 
 # Ignore env
-/.env
 /.env.local
 node_modules
