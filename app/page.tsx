@@ -1,9 +1,10 @@
 import Link from "next/link";
 import React, { Suspense } from 'react'
+import { BASE_URL } from "./components/constants";
 
 async function AboutMe(){
 
-  const data = await fetch(process.env.NEXT_PUBLIC_API_URL + '/api/mini-apps/' + '66e8a75b716135c9037538ed')
+  const data = await fetch(BASE_URL + '/api/mini-apps/' + '66e8a75b716135c9037538ed')
   const miniApp: MiniApp = await data.json()
 
   return (
@@ -40,6 +41,9 @@ async function AboutMe(){
 }
 
 export default function Page(){
+  if(!BASE_URL){
+    return null
+  }
 
   return (
     <Suspense fallback={null}>

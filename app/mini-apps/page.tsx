@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import React from 'react'
+import { BASE_URL } from '../components/constants';
 
 async function MiniApps(){
 
-  const data = await fetch(process.env.NEXT_PUBLIC_API_URL + '/api/mini-apps')
+  const data = await fetch(BASE_URL + '/api/mini-apps')
   const miniApps: MiniApp[] = await data.json()
 
   return (
@@ -25,6 +26,10 @@ async function MiniApps(){
 }
 
 export default function Page(){
+
+  if(!BASE_URL){
+    return null
+  }
   return (
     <MiniApps/>
   )

@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import React from 'react'
+import { BASE_URL } from '../components/constants';
 
 async function Algorithms(){
 
-  const data = await fetch(process.env.NEXT_PUBLIC_API_URL + '/api/algorithms')
-  console.log(process.env.NEXT_PUBLIC_API_URL, data)
+  const data = await fetch(BASE_URL + '/api/algorithms')
   const algorithms: Algo[] = await data.json()
 
   return (
@@ -22,6 +22,10 @@ async function Algorithms(){
 }
 
 export default function Page(){
+  if(!BASE_URL){
+    return null
+  }
+
   return (
     <Algorithms/>
   )

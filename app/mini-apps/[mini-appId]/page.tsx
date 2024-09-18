@@ -1,3 +1,4 @@
+import { BASE_URL } from '@/app/components/constants'
 import React from 'react'
 
 async function MiniAppDetails( { params }: {
@@ -6,7 +7,7 @@ async function MiniAppDetails( { params }: {
   }
 } ){
 
-  const data = await fetch(process.env.NEXT_PUBLIC_API_URL + '/api/mini-apps/' + params["mini-appId"])
+  const data = await fetch(BASE_URL + '/api/mini-apps/' + params["mini-appId"])
   const miniApp: MiniApp = await data.json()
 
   return (
@@ -35,6 +36,11 @@ export default function Page( { params }: {
     "mini-appId": string
   }
 } ){
+
+  if(!BASE_URL){
+    return null
+  }
+
   return (
     <MiniAppDetails params={params}/>
   )

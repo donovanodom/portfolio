@@ -1,6 +1,7 @@
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import React from 'react'
+import { BASE_URL } from '@/app/components/constants';
 
 async function AlgorithmDetails( { params }: {
   params: {
@@ -8,7 +9,7 @@ async function AlgorithmDetails( { params }: {
   }
 } ){
 
-  const data = await fetch(process.env.NEXT_PUBLIC_API_URL + '/api/algorithms/' + params.algorithmId)
+  const data = await fetch(BASE_URL + '/api/algorithms/' + params.algorithmId)
   const algorithm: Algo = await data.json()
 
   function convertUnicode(input: string): string {
@@ -34,6 +35,10 @@ export default function Page( { params }: {
     algorithmId: string
   }
 } ){
+  if(!BASE_URL){
+    return null
+  }
+
   return (
     <AlgorithmDetails params={params}/>
   )
