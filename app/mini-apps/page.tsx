@@ -6,7 +6,7 @@ async function MiniApps(){
 
   const data = await fetch(BASE_URL + '/api/mini-apps')
   const miniApps: MiniApp[] = await data.json()
-  console.log(data, miniApps)
+  console.log('req', data, miniApps)
 
   return (
     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-cols-1">
