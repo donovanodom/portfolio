@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { Suspense } from 'react'
+import React from 'react'
 import { BASE_URL } from "./components/constants";
 
 export const dynamic = 'force-dynamic'
@@ -48,8 +48,6 @@ export default function Page(){
   }
 
   return (
-    <Suspense fallback={null}>
-      <AboutMe/>
-    </Suspense>
+    <AboutMe/>
   )
 }
