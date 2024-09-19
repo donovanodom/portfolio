@@ -3,7 +3,6 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest, context: any){
   const { params } = context
-  console.log(params)
   if(req.method === 'GET'){
     try {
         const { miniApp, error } = await getMiniApps(params["mini-appId"])
