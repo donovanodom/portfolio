@@ -2,6 +2,8 @@ import Link from "next/link";
 import React, { Suspense } from 'react'
 import { BASE_URL } from "./components/constants";
 
+export const dynamic = 'force-dynamic'
+
 async function AboutMe(){
 
   const data = await fetch(BASE_URL + '/api/mini-apps/' + '66e8a75b716135c9037538ed')

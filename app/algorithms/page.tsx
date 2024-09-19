@@ -2,6 +2,8 @@ import Link from 'next/link';
 import React from 'react'
 import { BASE_URL } from '../components/constants';
 
+export const dynamic = 'force-dynamic'
+
 async function Algorithms(){
 
   const data = await fetch(BASE_URL + '/api/algorithms')
