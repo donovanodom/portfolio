@@ -14,7 +14,7 @@ async function MiniApps(){
       {miniApps.length && miniApps.map((miniApp: MiniApp) => (
         <Link href={'/miniApps/' + miniApp._id}>
           <div key={miniApp._id} className="pointer [&_pre]:whitespace-pre-wrap overflow-hidden max-h-[600px] md:max-h-[400px] p-2 lg:p-0 [mask-image:linear-gradient(0deg,transparent_0%,#000_40%,#000_80%)]">
-              <h1 className="hover:text-blue-500 mb-4 text-xl font-extrabold leading-none tracking-tight md:text-2xl">{miniApp.title}</h1>
+              <h1 className="text-black hover:text-blue-500 mb-4 text-xl font-extrabold leading-none tracking-tight md:text-2xl">{miniApp.title}</h1>
             <div className='text-gray-500'>
               <img src={miniApp.image}/>
               <br/>

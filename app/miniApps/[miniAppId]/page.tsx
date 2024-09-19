@@ -7,7 +7,7 @@ async function MiniAppDetails({id}: {id: string}){
   const miniApp: MiniApp = await data.json()
 
   return (
-    <div className="[&_pre]:whitespace-pre-wrap">
+    <div className="text-black [&_pre]:whitespace-pre-wrap">
       <h1>
         <a href={miniApp['github-link']} className="mb-4 text-2xl font-extrabold leading-none tracking-tight md:text-3xl lg:text-4xl hover:text-blue-500">{miniApp.title}</a>
       </h1>

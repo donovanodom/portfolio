@@ -19,7 +19,7 @@ const NavBar = () => {
   return (
     <nav className="bg-white border-gray-200 fixed w-full z-10">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <div className="text-xl font-bold leading-tight tracking-tight rounded-lg focus:outline-none focus:shadow-outline">
+        <div className="text-black text-xl font-bold leading-tight tracking-tight rounded-lg focus:outline-none focus:shadow-outline">
             Donovan Codes
         </div>
         <button
@@ -29,7 +29,6 @@ const NavBar = () => {
           aria-controls="navbar-dropdown"
           aria-expanded="false"
         >
-          <span className="sr-only">Open main menu</span>
           <svg
             className="w-5 h-5 "
             aria-hidden="true"

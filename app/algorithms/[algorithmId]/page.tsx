@@ -16,7 +16,7 @@ async function AlgorithmDetails({id}: {id: string}){
   }
 
   return (
-    <div className="[&_pre]:whitespace-pre-wrap">
+    <div className="text-black [&_pre]:whitespace-pre-wrap">
       <h1 className="mb-4 text-2xl font-extrabold leading-none tracking-tight md:text-3xl lg:text-4xl">{algorithm.title}</h1>
       <div dangerouslySetInnerHTML={{__html: algorithm.content}}/>
       <br/>
