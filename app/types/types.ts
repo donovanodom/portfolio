@@ -9,7 +9,7 @@ type WriteUps = {
   items: WriteUp[]
 }
 
-type MiniApp = {
+type Project = {
   _id: string,
   title: string,
   description: string,

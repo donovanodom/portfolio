@@ -6,8 +6,8 @@ export const dynamic = 'force-dynamic'
 
 async function AboutMe(){
 
-  const data = await fetch(BASE_URL + '/api/miniApps/' + '66e8a75b716135c9037538ed')
-  const miniApp: MiniApp = await data.json()
+  const data = await fetch(BASE_URL + '/api/projects/' + '66e8a75b716135c9037538ed')
+  const project: Project = await data.json()
 
   return (
     <div className="grid gap-8 lg:grid-cols-2 sm:grid-cols-1">
@@ -19,21 +19,21 @@ async function AboutMe(){
         </p>
       </div>
       <div className="pointer">
-        {miniApp?._id && ( 
+        {project?._id && ( 
           <>
-            <Link href={'/miniApps/' + miniApp._id}>
+            <Link href={'/projects/' + project._id}>
             <h1 className='text-black mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl'>Featured</h1>
-            <div key={miniApp._id} className="[&_pre]:whitespace-pre-wrap overflow-hidden max-h-full p-2 lg:p-0">
-                <h1 className="text-black hover:text-blue-500 mb-4 text-xl font-extrabold leading-none tracking-tight md:text-2xl">{miniApp.title}</h1>
+            <div key={project._id} className="[&_pre]:whitespace-pre-wrap overflow-hidden max-h-full p-2 lg:p-0">
+                <h1 className="text-black hover:text-blue-500 mb-4 text-xl font-extrabold leading-none tracking-tight md:text-2xl">{project.title}</h1>
                 <div className='text-gray-500'>
-                  <img src={miniApp.image}/>
+                  <img src={project.image}/>
                   <br/>
                 </div>
             </div>
             </Link>
-            <div className="text-black">Link to repository:  &nbsp; <a className="cursor-default hover:text-blue-600 text-blue-500 hover:underline" href={miniApp['github-link']}>{miniApp['github-link']}</a></div>
+            <div className="text-black">Link to repository:  &nbsp; <a className="cursor-default hover:text-blue-600 text-blue-500 hover:underline" href={project['github-link']}>{project['github-link']}</a></div>
             <div className="text-black inline">Visit site: &nbsp;
-              <a href={miniApp.site} className=" cursor-default hover:underline inline hover:text-blue-600 text-blue-500">{miniApp.site}</a>
+              <a href={project.site} className=" cursor-default hover:underline inline hover:text-blue-600 text-blue-500">{project.site}</a>
             </div>
           </>
         )}
