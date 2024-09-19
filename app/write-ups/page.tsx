@@ -12,7 +12,7 @@ async function WriteUps(){
     {writeUps?.items.map((writeUp: WriteUp) => (
         <div key={writeUp.guid} className='overflow-hidden max-h-[600px] md:max-h-[400px] p-2 lg:p-0 [mask-image:linear-gradient(0deg,transparent_0%,#000_40%,#000_80%)]'>
           <Link href={writeUp.link}>
-          <h1 className='hover:text-blue-500 mb-4 text-xl font-extrabold leading-none tracking-tight md:text-2xl'>{writeUp.title}</h1>
+            <h1 className='text-black hover:text-blue-500 mb-4 text-xl font-extrabold leading-none tracking-tight md:text-2xl'>{writeUp.title}</h1>
           </Link>
           <div dangerouslySetInnerHTML={{ __html: writeUp.content }} className='text-gray-500'/>
         </div>
