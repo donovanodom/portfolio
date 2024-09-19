@@ -19,11 +19,11 @@ async function AboutMe(){
         </p>
       </div>
       <div className="pointer">
-        {miniApp?.id && ( 
+        {miniApp?._id && ( 
           <>
-            <Link href={'/mini-apps/' + miniApp.id}>
+            <Link href={'/mini-apps/' + miniApp._id}>
             <h1 className='mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl'>Featured</h1>
-            <div key={miniApp.id} className="[&_pre]:whitespace-pre-wrap overflow-hidden max-h-full p-2 lg:p-0">
+            <div key={miniApp._id} className="[&_pre]:whitespace-pre-wrap overflow-hidden max-h-full p-2 lg:p-0">
                 <h1 className="hover:text-blue-500 mb-4 text-xl font-extrabold leading-none tracking-tight md:text-2xl">{miniApp.title}</h1>
                 <div className='text-gray-500'>
                 <img src={miniApp.image}/>

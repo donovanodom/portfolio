@@ -22,12 +22,13 @@ async function init() {
 
 export async function getMiniApps(id = null) {
   if(id){
+    const miniAppId = ObjectId.createFromHexString(id)
     try {
       const result = await miniApps
-        .findOne({id: id})
+        .findOne({_id: miniAppId})
       return { miniApp: result }
     } catch (error) {
-      return { error: 'Failed to fetch mini-app' }
+      return { error: `Failed to fetch mini-app: ${error}`, }
     }
   } else {
     try {
