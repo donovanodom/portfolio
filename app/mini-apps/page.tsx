@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link';
 import React from 'react'
 import { BASE_URL } from '../components/constants';
@@ -8,6 +6,7 @@ async function MiniApps(){
 
   const data = await fetch(BASE_URL + '/api/mini-apps')
   const miniApps: MiniApp[] = await data.json()
+  console.log(data, miniApps)
 
   return (
     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-cols-1">
