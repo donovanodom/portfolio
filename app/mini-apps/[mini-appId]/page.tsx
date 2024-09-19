@@ -1,16 +1,10 @@
 import { BASE_URL } from '@/app/components/constants'
 import React from 'react'
 
-async function MiniAppDetails( { params }: {
-  params: {
-    "mini-appId": string
-  }
-} ){
+async function MiniAppDetails({id}: {id: string}){
 
-  const data = await fetch(BASE_URL + '/api/mini-apps/' + params["mini-appId"])
+  const data = await fetch(BASE_URL + '/api/mini-apps/' + id)
   const miniApp: MiniApp = await data.json()
-
-  console.log(miniApp, data, params)
 
   return (
     <div className="[&_pre]:whitespace-pre-wrap">
@@ -43,7 +37,9 @@ export default function Page( { params }: {
     return null
   }
 
+  const id = params["mini-appId"]
+
   return (
-    <MiniAppDetails params={params}/>
+    <MiniAppDetails id={id}/>
   )
 }
