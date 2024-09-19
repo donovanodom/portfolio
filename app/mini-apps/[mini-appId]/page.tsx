@@ -10,6 +10,8 @@ async function MiniAppDetails( { params }: {
   const data = await fetch(BASE_URL + '/api/mini-apps/' + params["mini-appId"])
   const miniApp: MiniApp = await data.json()
 
+  console.log(miniApp, data, params)
+
   return (
     <div className="[&_pre]:whitespace-pre-wrap">
       <h1>
