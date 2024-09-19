@@ -37,7 +37,7 @@ export default function Page( { params }: {
     return null
   }
 
-  const id = params["mini-appId"]
+  const id = params['mini-appId']
 
   return (
     <MiniAppDetails id={id}/>

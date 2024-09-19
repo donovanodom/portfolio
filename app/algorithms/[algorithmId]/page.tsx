@@ -5,13 +5,9 @@ import { BASE_URL } from '@/app/components/constants';
 
 export const dynamic = 'force-dynamic'
 
-async function AlgorithmDetails( { params }: {
-  params: {
-    algorithmId: string
-  }
-} ){
+async function AlgorithmDetails({id}: {id: string}){
 
-  const data = await fetch(BASE_URL + '/api/algorithms/' + params.algorithmId)
+  const data = await fetch(BASE_URL + '/api/algorithms/' + id)
   const algorithm: Algo = await data.json()
 
   function convertUnicode(input: string): string {
@@ -41,7 +37,9 @@ export default function Page( { params }: {
     return null
   }
 
+  const id = params.algorithmId
+
   return (
-    <AlgorithmDetails params={params}/>
+    <AlgorithmDetails id={id}/>
   )
 }
