@@ -1,8 +1,6 @@
 import { BASE_URL } from '@/app/components/constants'
 import React from 'react'
 
-export const dynamic = 'force-dynamic'
-
 async function MiniAppDetails( { params }: {
   params: {
     "mini-appId": string
