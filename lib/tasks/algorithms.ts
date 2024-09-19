@@ -24,11 +24,12 @@ export async function getAlgorithms(id = null) {
   if(id){
     const algorithmId = ObjectId.createFromHexString(id)
     try {
+      if(!algorithms) await init()
       const result = await algorithms
         .findOne({_id: algorithmId})
       return { algorithm: result }
     } catch (error) {
-      return { error: 'Failed to fetch algorithm' }
+      return { error: `Failed to fetch algorithm: ${error}` }
     }
   } else {
     try {
@@ -38,7 +39,7 @@ export async function getAlgorithms(id = null) {
         .toArray()
       return { algorithms: result }
     } catch (error) {
-      return { error: 'Failed to fetch algorithms' }
+      return { error: `Failed to fetch algorithms: ${error}` }
     }
   }
 }

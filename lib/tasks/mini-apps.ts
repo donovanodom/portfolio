@@ -24,8 +24,9 @@ export async function getMiniApps(id = null) {
   if(id){
     const miniAppId = ObjectId.createFromHexString(id)
     try {
+      if(!miniApps) await init()
       const result = await miniApps
-      .find({_id: miniAppId}).limit(1).toArray()
+        .findOne({_id: miniAppId})
       return { miniApp: result }
     } catch (error) {
       return { error: `Failed to fetch mini-app: ${error}`, }
@@ -38,7 +39,7 @@ export async function getMiniApps(id = null) {
         .toArray()
       return { miniApps: result }
     } catch (error) {
-      return { error: 'Failed to fetch mini-apps' }
+      return { error: `Failed to fetch mini-apps: ${error}` }
     }
   }
 }
