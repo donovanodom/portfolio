@@ -1,11 +1,11 @@
-import { getMiniApps } from "@/lib/tasks/mini-apps";
+import { getMiniApps } from "@/lib/tasks/miniApps";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest, context: any){
   const { params } = context
   if(req.method === 'GET'){
     try {
-        const { miniApp, error } = await getMiniApps(params["mini-appId"])
+        const { miniApp, error } = await getMiniApps(params["miniAppId"])
         if(error) throw new Error(error)
         return NextResponse.json(miniApp)
     } catch (error: any) {

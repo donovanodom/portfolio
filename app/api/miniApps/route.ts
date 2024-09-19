@@ -1,4 +1,4 @@
-import { getMiniApps } from "@/lib/tasks/mini-apps";
+import { getMiniApps } from "@/lib/tasks/miniApps";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest){

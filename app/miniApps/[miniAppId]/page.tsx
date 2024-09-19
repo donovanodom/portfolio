@@ -3,7 +3,7 @@ import React from 'react'
 
 async function MiniAppDetails({id}: {id: string}){
 
-  const data = await fetch(BASE_URL + '/api/mini-apps/' + id)
+  const data = await fetch(BASE_URL + '/api/miniApps/' + id)
   const miniApp: MiniApp = await data.json()
 
   return (
@@ -29,7 +29,7 @@ async function MiniAppDetails({id}: {id: string}){
 
 export default function Page( { params }: {
   params: {
-    "mini-appId": string
+    "miniAppId": string
   }
 } ){
 
@@ -37,7 +37,7 @@ export default function Page( { params }: {
     return null
   }
 
-  const id = params['mini-appId']
+  const id = params.miniAppId
 
   return (
     <MiniAppDetails id={id}/>

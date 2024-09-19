@@ -29,7 +29,7 @@ export async function getMiniApps(id = null) {
         .findOne({_id: miniAppId})
       return { miniApp: result }
     } catch (error) {
-      return { error: `Failed to fetch mini-app: ${error}`, }
+      return { error: `Failed to fetch mini app: ${error}`, }
     }
   } else {
     try {
@@ -39,7 +39,7 @@ export async function getMiniApps(id = null) {
         .toArray()
       return { miniApps: result }
     } catch (error) {
-      return { error: `Failed to fetch mini-apps: ${error}` }
+      return { error: `Failed to fetch mini apps: ${error}` }
     }
   }
 }

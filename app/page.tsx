@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic'
 
 async function AboutMe(){
 
-  const data = await fetch(BASE_URL + '/api/mini-apps/' + '66e8a75b716135c9037538ed')
+  const data = await fetch(BASE_URL + '/api/miniApps/' + '66e8a75b716135c9037538ed')
   const miniApp: MiniApp = await data.json()
 
   return (
@@ -21,7 +21,7 @@ async function AboutMe(){
       <div className="pointer">
         {miniApp?._id && ( 
           <>
-            <Link href={'/mini-apps/' + miniApp._id}>
+            <Link href={'/miniApps/' + miniApp._id}>
             <h1 className='mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl'>Featured</h1>
             <div key={miniApp._id} className="[&_pre]:whitespace-pre-wrap overflow-hidden max-h-full p-2 lg:p-0">
                 <h1 className="hover:text-blue-500 mb-4 text-xl font-extrabold leading-none tracking-tight md:text-2xl">{miniApp.title}</h1>
