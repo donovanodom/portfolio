@@ -14,7 +14,7 @@ async function AboutMe(){
       <div>
         <h1 className='mb-4 text-4xl font-extrabold leading-none tracking-tight text-black md:text-5xl lg:text-6xl'>FullStack, Frontend-focused, TypeScript, React, NextJS and Ruby on Rails Software Engineer.</h1>
         <div className="w-full my-8">
-          <a className="text-white rounded-btn p-3 bg-blue-500 button-main button-scheme" href="public/Donovan%20Odom%20Resume%20Software%20Engineer%20with%20Laboratory%20Experience.pdf" download>Download Resume</a>
+          <a className="text-white rounded-btn p-3 bg-blue-500 button-main button-scheme" href='https://docs.google.com/document/d/1n3G-_CLKlqFDO1Vevl_ca9NOiHziL2W3kS9OhMOxpTE/edit?usp=sharing' download>Download Resume</a>
         </div>
         <p className='mb-6 font-normal text-gray-500'>
           Strategic, resourceful, results-driven technologist offering expertise in creating user-friendly and responsive frontend web applications, converting design mockups and user requirements into clean, effective code to improve user experience, optimizing web performance, executing best practices, and spearheading cross-browser compatibility. Innovative business partner, effective communicator, and problem-solving project manager known for cultivating and maintaining positive, productive relationships with designers, backend developers, and stakeholders to provide quality code and solutions that meet project goals and deadlines, championing projects to completion. Collaborative leader and team contributor with demonstrated success in partnering with diverse, cross-functional teams to stay current with the latest technologies and best practices in front-end development to drive innovation, maintain a competitive edge, and attain company goals.
