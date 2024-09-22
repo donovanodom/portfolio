@@ -1,4 +1,4 @@
-import { BASE_URL } from '@/app/components/constants'
+import { BASE_URL } from '@/app/util/constants'
 import React from 'react'
 
 async function ProjectDetails({id}: {id: string}){

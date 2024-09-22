@@ -3,10 +3,9 @@ type WriteUp = {
   title: string,
   link: string,
   content: string,
-}
-
-type WriteUps = {
-  items: WriteUp[]
+  author: string,
+  pubDate: string,
+  categories: string[],
 }
 
 type Project = {

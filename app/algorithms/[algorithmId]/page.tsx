@@ -1,7 +1,7 @@
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import React from 'react'
-import { BASE_URL } from '@/app/components/constants';
+import { BASE_URL } from '@/app/util/constants';
 
 export const dynamic = 'force-dynamic'
 

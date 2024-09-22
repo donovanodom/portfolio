@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react'
-import { BASE_URL } from '../components/constants';
+import { BASE_URL } from '../util/constants';
 
 export const dynamic = 'force-dynamic'
 
