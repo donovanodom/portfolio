@@ -36,14 +36,14 @@ export default function WriteUps(){
             </Link>
             <div className='mb-4'>
               {writeUp.categories.map((tag: string) => 
-                <div className="text-xs m-1 inline-block w-min h-min bg-base-200 cursor-default whitespace-nowrap me-2 px-3 py-1 rounded-full">{tag}</div>
+                <div className="text-black text-xs m-1 inline-block w-min h-min bg-base-200 cursor-default whitespace-nowrap me-2 px-3 py-1 rounded-full">{tag}</div>
               )}
             </div>
             <div className='float-right font-light text-sm cursor-default'>
-              <div className='text-right'>
+              <div className='text-black text-right'>
                 {writeUp.author}
               </div>
-              <div className='text-right'>
+              <div className='text-black text-right'>
                 {parseDate(writeUp.pubDate)}
               </div>
             </div>
