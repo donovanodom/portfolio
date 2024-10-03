@@ -22,4 +22,10 @@ type Algo = {
   title: string,
   content: string,
   code: string,
+  tags: string[]
+}
+
+type Tag = {
+  name: string,
+  count: number,
 }

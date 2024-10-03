@@ -23,3 +23,28 @@ export const parseDate = (date: string): string => {
     day: 'numeric',
   })
 }
+
+export const filterByTags = (algorithms: Algo[], tags: Tag[]): Algo[] => {
+  const tagName = tags.map((tag) => tag.name)
+  return algorithms.filter((algorithm: Algo) => algorithm.tags.some((tag) => tagName.includes(tag)))
+}
+
+export const initTags = (algorithms: Algo[]): Tag[] => {
+  const mappedTags = algorithms.reduce((allTags: Tag[], algorithm: Algo) => {
+    const tags = algorithm.tags
+    for(const tag of tags){
+      const tagIndex = allTags.findIndex((prevTag) => prevTag.name == tag)
+      if(tagIndex >= 0){
+        allTags[tagIndex].count++
+      }else{
+        allTags.push({
+          name: tag,
+          count: 1,
+        })
+      }
+    }
+    return allTags
+  }, [])
+
+  return mappedTags
+}

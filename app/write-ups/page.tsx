@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 import { parseDate, searchWriteUpText } from '../util/helpers'
 import SearchInput from '../components/reusable/SearchInput'
+import Tag from '../components/reusable/Tag'
 
 export default function WriteUps(){
 
@@ -36,7 +37,7 @@ export default function WriteUps(){
             </Link>
             <div className='mb-4'>
               {writeUp.categories.map((tag: string) => 
-                <div className="text-black text-xs m-1 inline-block w-min h-min bg-base-200 cursor-default whitespace-nowrap me-2 px-3 py-1 rounded-full">{tag}</div>
+                <Tag tag={tag}/>
               )}
             </div>
             <div className='float-right font-light text-sm cursor-default'>
