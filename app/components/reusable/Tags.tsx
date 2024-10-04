@@ -20,7 +20,7 @@ const Tags: ForwardRefRenderFunction <HTMLDivElement,  TagsProps> = ({tags, togg
           return <Tag key={index} tag={displayTag} tagObj={tag} handleSelection={handleSelection} selected={selected}/>
         })}
       </div>
-      <div className={ `w-24 rounded-b-xl border-b border-l border-r border-black bg-white cursor-pointer text-sm font-normal text-center relative ${toggleTags ? 'top-0' : 'top-2'} md:top-0 ml-6 md:ml-14 lg:ml-12`} onClick={handleToggle}>
+      <div className={ `w-24 pb-1 rounded-b-xl border-b border-l border-r border-black bg-white cursor-pointer text-sm font-normal text-center relative ${toggleTags ? 'top-0' : 'top-2'} md:top-0 ml-6 md:ml-14 lg:ml-12`} onClick={handleToggle}>
         <div className='bg-white text-black h-[1px] w-[94px] relative top-[-1px]'></div>
         tags
       </div>

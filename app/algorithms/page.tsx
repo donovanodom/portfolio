@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useState, useLayoutEffect, useRef, useEffect, use} from 'react'
+import React, {useState, useLayoutEffect, useRef, useEffect} from 'react'
 import Tags from '../components/reusable/Tags'
 import { useRouter } from 'next/navigation'
 import { filterByTags, initTags } from '../util/helpers'
@@ -15,6 +15,36 @@ export default function Algorithms(){
   const [toggleTags, setToggleTags] = useState<boolean>(false)
   const [tags, setTags] = useState<Tag[]>([])
   const [width, setWidth] = useState(window.innerWidth)
+
+  const handleToggle  = () => {
+    setToggleTags(() => !toggleTags)
+  }
+
+  const handleWindowSizeChange = () => {
+    setWidth(window.innerWidth)
+  }
+
+  const handleSelection = (tag: Tag) => {
+    const tagIndex = tags.findIndex((curTag) => curTag.name == tag.name)
+    const deactivateTag = tags[tagIndex].active
+    if(deactivateTag){
+      const updatedTag = {...tags[tagIndex], active: false};
+      const newTags = [
+        ...tags.slice(0, tagIndex),
+        updatedTag,
+        ...tags.slice(tagIndex + 1)
+      ]
+      setTags(newTags)
+    } else {
+      const updatedTag = {...tags[tagIndex], active: true};
+      const newTags = [
+        ...tags.slice(0, tagIndex),
+        updatedTag,
+        ...tags.slice(tagIndex + 1)
+      ]
+      setTags(newTags)
+    }
+  }
 
   useEffect(() => { 
     const fetchAlgorithms = async () => {
@@ -42,10 +72,6 @@ export default function Algorithms(){
     }
   }, [tags])
 
-  const handleWindowSizeChange = () => {
-      setWidth(window.innerWidth)
-  }
-
   useEffect(() => {
     window.addEventListener('resize', handleWindowSizeChange)
     return () => {
@@ -53,38 +79,12 @@ export default function Algorithms(){
     }
 }, [])
 
-  const handleToggle  = () => {
-    setToggleTags(() => !toggleTags)
-  }
-
   useLayoutEffect(() => { 
     if(ref?.current){
       const newHeight = ref.current.clientHeight
       setHeight(newHeight)
     }
   }, [width, toggleTags])
-
-  const handleSelection = (tag: Tag) => {
-    const tagIndex = tags.findIndex((curTag) => curTag.name == tag.name)
-    const deactivateTag = tags[tagIndex].active
-    if(deactivateTag){
-      const updatedTag = {...tags[tagIndex], active: false};
-      const newTags = [
-        ...tags.slice(0, tagIndex),
-        updatedTag,
-        ...tags.slice(tagIndex + 1)
-      ]
-      setTags(newTags)
-    } else {
-      const updatedTag = {...tags[tagIndex], active: true};
-      const newTags = [
-        ...tags.slice(0, tagIndex),
-        updatedTag,
-        ...tags.slice(tagIndex + 1)
-      ]
-      setTags(newTags)
-    }
-  }
 
   return (
     <div>
@@ -96,7 +96,7 @@ export default function Algorithms(){
         handleSelection={handleSelection}
         selected={tags.some((tag) => tag.active)}
       />
-      <div className='h-2'></div>
+      <div className='h-4'></div>
       <div style={{marginTop: `${height}px` }} className={`cursor-default grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-cols-1`}>
         {filteredAlgorithms.length ? 
         filteredAlgorithms?.map((algorithm: Algo, index: number) => (
