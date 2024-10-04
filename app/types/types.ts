@@ -28,4 +28,5 @@ type Algo = {
 type Tag = {
   name: string,
   count: number,
+  active: boolean,
 }

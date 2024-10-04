@@ -2,8 +2,6 @@ import Link from 'next/link';
 import React from 'react'
 import { BASE_URL } from '../util/constants';
 
-export const dynamic = 'force-dynamic'
-
 async function Projects(){
 
   const data = await fetch(BASE_URL + '/api/projects')

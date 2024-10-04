@@ -3,8 +3,6 @@ import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import React from 'react'
 import { BASE_URL } from '@/app/util/constants';
 
-export const dynamic = 'force-dynamic'
-
 async function AlgorithmDetails({id}: {id: string}){
 
   const data = await fetch(BASE_URL + '/api/algorithms/' + id)
