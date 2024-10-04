@@ -14,14 +14,16 @@ export default function Algorithms(){
   const [height, setHeight] = useState<number>(0)
   const [toggleTags, setToggleTags] = useState<boolean>(false)
   const [tags, setTags] = useState<Tag[]>([])
-  const [width, setWidth] = useState(window.innerWidth)
+  const [width, setWidth] = useState(typeof window !== "undefined" ? window.innerWidth : null)
 
   const handleToggle  = () => {
     setToggleTags(() => !toggleTags)
   }
 
   const handleWindowSizeChange = () => {
-    setWidth(window.innerWidth)
+    if(typeof window !== "undefined"){
+      setWidth(window.innerWidth)
+    }
   }
 
   const handleSelection = (tag: Tag) => {
@@ -73,14 +75,16 @@ export default function Algorithms(){
   }, [tags])
 
   useEffect(() => {
-    window.addEventListener('resize', handleWindowSizeChange)
-    return () => {
-        window.removeEventListener('resize', handleWindowSizeChange)
+    if(typeof window !== "undefined"){
+      window.addEventListener('resize', handleWindowSizeChange)
+      return () => {
+          window.removeEventListener('resize', handleWindowSizeChange)
+      }
     }
 }, [])
 
   useLayoutEffect(() => { 
-    if(ref?.current){
+    if(ref?.current && width){
       const newHeight = ref.current.clientHeight
       setHeight(newHeight)
     }
