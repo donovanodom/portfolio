@@ -17,7 +17,7 @@ const NavBar = () => {
   }, [])
 
   return (
-    <nav className={`bg-white border-b border-b-black fixed w-full ${toggleOpen ? 'z-[6]' : 'z-[0]'}`}>
+    <nav className={`bg-white border-b border-b-black fixed w-full ${toggleOpen ? 'z-[6]' : 'z-[1]'}`}>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <div className="text-black text-xl font-bold leading-tight tracking-tight rounded-lg focus:outline-none focus:shadow-outline">
             Donovan Codes

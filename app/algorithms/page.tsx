@@ -14,6 +14,7 @@ export default function Algorithms(){
   const [height, setHeight] = useState<number>(0)
   const [toggleTags, setToggleTags] = useState<boolean>(false)
   const [tags, setTags] = useState<Tag[]>([])
+  const [width, setWidth] = useState(window.innerWidth)
 
   useEffect(() => { 
     const fetchAlgorithms = async () => {
@@ -41,6 +42,17 @@ export default function Algorithms(){
     }
   }, [tags])
 
+  const handleWindowSizeChange = () => {
+      setWidth(window.innerWidth)
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowSizeChange)
+    return () => {
+        window.removeEventListener('resize', handleWindowSizeChange)
+    }
+}, [])
+
   const handleToggle  = () => {
     setToggleTags(() => !toggleTags)
   }
@@ -50,7 +62,7 @@ export default function Algorithms(){
       const newHeight = ref.current.clientHeight
       setHeight(newHeight)
     }
-  })
+  }, [width, toggleTags])
 
   const handleSelection = (tag: Tag) => {
     const tagIndex = tags.findIndex((curTag) => curTag.name == tag.name)
