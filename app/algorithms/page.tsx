@@ -2,7 +2,7 @@
 
 import React, {useState, useLayoutEffect, useRef, useEffect, use} from 'react'
 import Tags from '../components/reusable/Tags'
-// import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { filterByTags, initTags } from '../util/helpers'
 import DOMPurify from "isomorphic-dompurify"
 import { BASE_URL } from '../util/constants';
@@ -28,7 +28,7 @@ export default function Algorithms(){
     setTags(initTags(initAlgorithms))
   }, [initAlgorithms])
   
-  // const router = useRouter()
+  const router = useRouter()
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -88,13 +88,13 @@ export default function Algorithms(){
       <div style={{marginTop: `${height}px` }} className={`cursor-default grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-cols-1`}>
         {filteredAlgorithms.length ? 
         filteredAlgorithms?.map((algorithm: Algo, index: number) => (
-          <div key={index}  className="text-black pointer [&_pre]:whitespace-pre-wrap overflow-hidden max-h-[600px] md:max-h-[400px] p-2 lg:p-0 [mask-image:linear-gradient(0deg,transparent_0%,#000_40%,#000_80%)]">
+          <div key={index} onClick={() => router.push('/algorithms/' + algorithm._id)} className="text-black pointer [&_pre]:whitespace-pre-wrap overflow-hidden max-h-[600px] md:max-h-[400px] p-2 lg:p-0 [mask-image:linear-gradient(0deg,transparent_0%,#000_40%,#000_80%)]">
             <h1 className="hover:text-blue-500 mb-4 text-xl font-extrabold leading-none tracking-tight md:text-2xl">{algorithm.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(algorithm.content) }} className='text-gray-500'/>
           </div> 
         )) :
         initAlgorithms?.map((algorithm: Algo, index: number) => (
-          <div key={index}  className="text-black pointer [&_pre]:whitespace-pre-wrap overflow-hidden max-h-[600px] md:max-h-[400px] p-2 lg:p-0 [mask-image:linear-gradient(0deg,transparent_0%,#000_40%,#000_80%)]">
+          <div key={index} onClick={() => router.push('/algorithms/' + algorithm._id)} className="text-black pointer [&_pre]:whitespace-pre-wrap overflow-hidden max-h-[600px] md:max-h-[400px] p-2 lg:p-0 [mask-image:linear-gradient(0deg,transparent_0%,#000_40%,#000_80%)]">
             <h1 className="hover:text-blue-500 mb-4 text-xl font-extrabold leading-none tracking-tight md:text-2xl">{algorithm.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(algorithm.content) }} className='text-gray-500'/>
           </div> 
