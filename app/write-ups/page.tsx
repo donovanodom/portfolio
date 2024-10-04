@@ -12,11 +12,12 @@ export default function WriteUps(){
   const [writeUps, setWriteUps] = useState<WriteUp[]>()
 
   useEffect(() => {
-    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@donovanodom')
-    .then(response => response.json())
-    .then(data => 
+    const fetchWriteUps = async () => {
+      const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@donovanodom')
+      const data = await res.json()
       setWriteUps(searchWriteUpText(search, data.items))
-    )
+    }
+    fetchWriteUps()
   },[search])
 
   const searchHandler = (event: React.FormEvent<HTMLInputElement>) => {

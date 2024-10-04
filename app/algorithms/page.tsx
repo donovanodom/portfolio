@@ -16,11 +16,12 @@ export default function Algorithms(){
   const [tags, setTags] = useState<Tag[]>([])
 
   useEffect(() => { 
-    fetch(BASE_URL + '/api/algorithms')
-    .then(response => response.json())
-    .then(data => 
+    const fetchAlgorithms = async () => {
+      const res = await fetch(BASE_URL + '/api/algorithms')
+      const data = await res.json()
       setInitAlgorithms(data)
-    )
+    }
+    fetchAlgorithms()
   }, [])
 
   useEffect(() => {
@@ -86,13 +87,13 @@ export default function Algorithms(){
       <div className='h-2'></div>
       <div style={{marginTop: `${height}px` }} className={`cursor-default grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-cols-1`}>
         {filteredAlgorithms.length ? 
-        filteredAlgorithms.map((algorithm: Algo, index: number) => (
+        filteredAlgorithms?.map((algorithm: Algo, index: number) => (
           <div key={index} onClick={() => router.push('/algorithms/' + algorithm._id)} className="text-black pointer [&_pre]:whitespace-pre-wrap overflow-hidden max-h-[600px] md:max-h-[400px] p-2 lg:p-0 [mask-image:linear-gradient(0deg,transparent_0%,#000_40%,#000_80%)]">
             <h1 className="hover:text-blue-500 mb-4 text-xl font-extrabold leading-none tracking-tight md:text-2xl">{algorithm.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(algorithm.content) }} className='text-gray-500'/>
           </div> 
         )) :
-        initAlgorithms.map((algorithm: Algo, index: number) => (
+        initAlgorithms?.map((algorithm: Algo, index: number) => (
           <div key={index} onClick={() => router.push('/algorithms/' + algorithm._id)} className="text-black pointer [&_pre]:whitespace-pre-wrap overflow-hidden max-h-[600px] md:max-h-[400px] p-2 lg:p-0 [mask-image:linear-gradient(0deg,transparent_0%,#000_40%,#000_80%)]">
             <h1 className="hover:text-blue-500 mb-4 text-xl font-extrabold leading-none tracking-tight md:text-2xl">{algorithm.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(algorithm.content) }} className='text-gray-500'/>
