@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useState, useLayoutEffect, useRef, useEffect, Suspense} from 'react'
+import React, {useState, useLayoutEffect, useRef, useEffect} from 'react'
 import Tags from '../components/reusable/Tags'
 import { useRouter } from 'next-nprogress-bar'
 import { filterByTags, initTags } from '../util/helpers'
