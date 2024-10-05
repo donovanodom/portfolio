@@ -4,6 +4,7 @@ import "./globals.css";
 import NavBar from "./components/NavBar";
 import Head from "next/head";
 import React from 'react'
+import NextTopLoader from "nextjs-toploader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,10 +25,11 @@ export default function RootLayout({
          <link rel="shortcut icon" href="public/favicon.ico"/>
         </Head>
         <body className={`${inter.className} bg-gray-50`}>
+          <NextTopLoader />
           <NavBar/>
-          <div className="md:px-12 md:py-4 px-4 py-4 md:mt-14 mt-20">
-            {children}
-          </div>
+            <div className="md:px-12 md:py-4 px-4 py-4 md:mt-14 mt-20">
+              {children}
+            </div>
         </body>
       </html>
   );
