@@ -17,6 +17,7 @@ export default function Algorithms(){
   const [width, setWidth] = useState(typeof window !== "undefined" ? window.innerWidth : null)
   const router = useRouter()
   const ref = useRef<HTMLDivElement>(null)
+  
 
   const handleToggle  = () => {
     setToggleTags(() => !toggleTags)
@@ -56,7 +57,7 @@ export default function Algorithms(){
 
   useEffect(() => { 
     const fetchAlgorithms = async () => {
-      const res = await fetch(BASE_URL + '/api/algorithms')
+      const res = await fetch(BASE_URL + '/api/algorithms', {cache: 'no-store'})
       const data = await res.json()
       setInitAlgorithms(data)
     }
