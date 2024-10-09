@@ -13,18 +13,8 @@ const nextConfig = {
       },
     ]
   },
-
-  // Enable static exports for the App Router.
   output: "export",
-
-  // Set base path. This is the slug of your GitHub repository.
-  basePath: "/nextjs-github-pages",
-
-  // Disable server-based image optimization. Next.js does not support
-  // dynamic features with static exports.
-  images: {
-    unoptimized: true,
-  },
+  reactStrictMode: true,
 }
  
 module.exports = nextConfig
